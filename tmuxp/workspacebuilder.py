@@ -380,7 +380,7 @@ def freeze(session):
                     current_cmd.startswith('-') or
                     any(
                         current_cmd.endswith(cmd)
-                        for cmd in ['python', 'ruby', 'node']
+                        for cmd in ['zsh', 'python', 'ruby', 'node']
                     )
                 )
 
