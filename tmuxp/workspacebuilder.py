@@ -19,6 +19,7 @@ from libtmux.window import Window
 
 from . import exc
 from .util import run_before_script
+from .custom import get_pane_current_command
 
 logger = logging.getLogger(__name__)
 
@@ -373,7 +374,7 @@ def freeze(session):
             if p.get('pane_active', '0') == '1':
                 pconf['focus'] = 'true'
 
-            current_cmd = p.current_command
+            current_cmd = get_pane_current_command(p)
 
             def filter_interpretters_and_shells():
                 return (
